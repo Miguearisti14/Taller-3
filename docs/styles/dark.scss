@@ -1,0 +1,564 @@
+// Estilos generales
+body {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+h2 {
+    font-family: "Ubuntu", serif;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    align-items: center;
+    margin-top: 60px;
+    color: #FFFFFF;
+}
+
+// HEADER
+header {
+    font-family: "Ubuntu", serif;
+    background: #1E1E1E;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 15px 50px;
+    position: fixed;
+    width: 100%;
+    height: 45px;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    min-height: 80px;
+}
+
+// NAVEGACIÓN
+nav {
+    ul {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin-left: 25px;
+
+        li {
+            margin: 0 15px;
+
+            a {
+                text-decoration: none;
+                color: #E0E0E0;
+                font-size: 18px;
+                display: inline-block;
+                line-height: 1;
+            }
+        }
+
+        &.active {
+            display: flex;
+        }
+    }
+}
+
+.nav-toggle {
+    display: none;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+// LOGO
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFFFF;
+
+    img {
+        width: 60px;
+        height: auto;
+        margin-left: 5px;
+    }
+}
+
+// SLIDER
+.slider {
+    position: relative;
+    width: 100%;
+    height: 550px;
+    overflow: hidden;
+
+    .eslogan-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 15px 30px;
+        border-radius: 10px;
+        max-width: 60%;
+    }
+
+    .slides {
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .slide {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+    }
+
+    .eslogan {
+        font-family: "Dancing Script";
+        position: absolute;
+        top: 16%;
+        left: 5%;
+        color: #FFFFFF;
+        font-size: 80px;
+        font-weight: bold;
+        text-align: center;
+        padding: 15px 30px;
+        border-radius: 10px;
+        max-width: 60%;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: none;
+
+        &.displaySlide {
+            display: block;
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+    }
+
+    button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+        padding: 10px 15px;
+        background-color: rgba(255, 255, 255, 0.2);
+        color: #E0E0E0;
+        border: none;
+        cursor: pointer;
+        z-index: 10;
+    }
+
+    .prev {
+        left: 0;
+    }
+
+    .next {
+        right: 0;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+// GALERÍA IMÁGENES
+.galeria {
+    display: flex;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+
+    .item {
+        font-family: "Ubuntu", serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 250px;
+        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        background: #1E1E1E;
+        text-align: center;
+        padding-bottom: 10px;
+
+        img {
+            width: 100%;
+            height: 350px;
+            border-radius: 10px 10px 0 0;
+        }
+
+        p {
+            margin: 10px 0 0 0;
+            font-weight: bold;
+            font-size: 14px;
+            color: #E0E0E0;
+        }
+
+        &:hover {
+            transform: rotate(-5deg);
+        }
+    }
+}
+
+// VIDEO EMBEBIDO
+.video {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    border-radius: 50px;
+}
+
+iframe {
+    border-radius: 20px;
+    border-color: #76C7C0;
+    border-width: 8px;
+}
+
+// FOOTER
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #1E1E1E;
+    color: #E0E0E0;
+    font-size: 14px;
+    font-family: "Ubuntu", serif;
+
+    .footer-left {
+        display: flex;
+        align-items: center;
+
+        img {
+            height: 70px;
+            margin-right: 10px;
+        }
+    }
+
+    .footer-right {
+        display: flex;
+        gap: 20px;
+
+        a {
+            text-decoration: none;
+            color: #E0E0E0;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+// BOTÓN FLOTANTE
+.BotonFlotante {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: inline-block;
+    padding: 10px 10px;
+    border-radius: 50px;
+
+    img {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+// FORMULARIO DE CONTACTO
+.formulario {
+    top: 10%;
+    flex: 1;
+    padding-right: 20px;
+    font-family: "Ubuntu", serif;
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 4px;
+    background: #1E1E1E;
+    color: #E0E0E0;
+    border: 1px solid #333;
+}
+
+textarea {
+    font-family: "Ubuntu", serif;
+    height: 80px;
+    resize: none;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    background-color: #76C7C0;
+    color: #121212;
+
+    &:hover {
+        background-color: #5BB5AA;
+    }
+}
+
+.megaContenedor {
+    font-family: "Ubuntu", serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    position: relative;
+    top: 30%;
+    left: 1%;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    margin-top: 8%;
+    flex: 1;
+    background-color: #1E1E1E;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.imagen {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    margin-top: 8%;
+
+    img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+}
+
+// SECCIÓN SEDES
+.sedes-container {
+    text-align: center;
+    padding: 40px 20px;
+    color: #E0E0E0;
+
+    h2 {
+        font-family: "Ubuntu", serif;
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+}
+
+.sedes-info {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.sede {
+    font-family: "Ubuntu", serif;
+    max-width: 200px;
+
+    h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+        color: #FFFFFF;
+    }
+}
+
+.imagen-sede {
+    img {
+        max-width: 60%;
+        height: 50%;
+        border-radius: 8px;
+    }
+}
+
+// --- RESPONSIVE ---
+@media screen and (max-width: 768px) {
+    .megaContenedor {
+        flex-direction: column;
+        text-align: center;
+        margin-top: 20%;
+    }
+
+    .container {
+        width: 90%;
+        margin-top: 5%;
+    }
+
+    .imagen {
+        margin-top: 5%;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    nav {
+        ul {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            margin: 0;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+
+            li {
+                margin: 10px 0;
+                text-align: center;
+            }
+        }
+
+        ul.active {
+            display: flex;
+        }
+    }
+}
+
+#toggleDarkMode {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background-color: #fff;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s, transform 0.2s;
+    z-index: 1000;
+    // Asegura que esté por encima de otros elementos
+
+    &:hover {
+        background-color: #444;
+        transform: scale(1.1);
+    }
+}
+
+/* Inicio sesión */
+.inicio_sesion {
+    font-weight: bold;
+}
+
+.form-login {
+    top: 10%;
+    flex: 1;
+    padding-right: 20px;
+    font-family: "Ubuntu", serif;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #333;
+    border-radius: 4px;
+}
+
+textarea {
+    font-family: "Ubuntu", serif;
+    height: 80px;
+    resize: none;
+}
+
+button {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #d4f1ee;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #b3e6e0;
+}
+
+.container-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: auto;
+    margin-top: 15%;
+    margin-bottom: 5%;
+}
