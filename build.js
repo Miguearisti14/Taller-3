@@ -2,7 +2,7 @@ const esbuild = require('esbuild');
 const fs = require('fs');
 const path = require('path');
 const { minify } = require('html-minifier-terser');
-const imagemin = require('imagemin').default;
+import imagemin from 'imagemin';
 const imageminMozjpeg = require('imagemin-mozjpeg').default;
 const imageminPngquant = require('imagemin-pngquant').default;
 const imageminSvgo = require('imagemin-svgo').default;
