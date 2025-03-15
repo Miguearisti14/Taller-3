@@ -20,6 +20,7 @@
     "javascript-obfuscator": "^4.1.1"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
     "express": "^4.21.2",
     "imagemin": "^9.0.0",
     "imagemin-gifsicle": "^7.0.0",

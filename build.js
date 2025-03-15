@@ -2,7 +2,7 @@ const esbuild = require('esbuild');
 const fs = require('fs');
 const path = require('path');
 const { minify } = require('html-minifier-terser');
-import imagemin from 'imagemin';
+const imagemin = require('imagemin').default;
 const imageminMozjpeg = require('imagemin-mozjpeg').default;
 const imageminPngquant = require('imagemin-pngquant').default;
 const imageminSvgo = require('imagemin-svgo').default;
@@ -80,7 +80,7 @@ esbuild.build({
 
     console.log('⚡ Build completo con soporte para SASS');
     // Minificar archivos HTML
-    const htmlFiles = ['index.html', 'formulario.html', 'login.html', 'signin.html'];
+    const htmlFiles = ['index.html', 'formulario.html', 'login.html', 'signin.html', 'destinos.html'];
     htmlFiles.forEach(file => {
         minifyHTML(`docs/${file}`, `dist/${file}`);
 
