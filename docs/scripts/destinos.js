@@ -1,18 +1,30 @@
+import { deleteDestino } from "./supabase.js";
+
 export async function fetchDestinos() {
     const createDest = (destino) => {
         const destinoHtml = document.createElement('div');
         destinoHtml.classList.add("list-group-item", "list-group-item-action");
         destinoHtml.style.cursor = "pointer";
 
-        const destinoContent = `
-        <h5 class="mb-1 text-capitalize">${destino.Destino}</h5>
-        <p class="mb-1 text-capitalize"><strong>País:</strong> ${destino.Pais}</p>
-        <p class="mb-1 text-capitalize"><strong>Continente:</strong> ${destino.Continente}</p>
-        <p class="mb-1 text-capitalize"><strong>Idioma:</strong> ${destino.Idioma}</p>
-        <p class="mb-1 text-capitalize"><strong>Moneda:</strong> ${destino.Moneda}</p>
-    `;
+        // Contenido del destino
+        destinoHtml.innerHTML = `
+            <h5 class="mb-1 text-capitalize">${destino.Destino}</h5>
+            <p class="mb-1 text-capitalize"><strong>País:</strong> ${destino.Pais}</p>
+            <p class="mb-1 text-capitalize"><strong>Continente:</strong> ${destino.Continente}</p>
+            <p class="mb-1 text-capitalize"><strong>Idioma:</strong> ${destino.Idioma}</p>
+            <p class="mb-1 text-capitalize"><strong>Moneda:</strong> ${destino.Moneda}</p>
+            <button class="delete-btn" data-id="${destino.id}">🗑 Eliminar</button>
+        `;
 
-        destinoHtml.innerHTML = destinoContent;
+        // Evento de eliminación
+        const deleteButton = destinoHtml.querySelector(".delete-btn");
+        deleteButton.addEventListener("click", async () => {
+            if (confirm(`¿Seguro que quieres eliminar "${destino.Destino}"?`)) {
+                await deleteDestino(destino.id);
+                destinoHtml.remove();
+            }
+        });
+
         return destinoHtml;
     };
 
@@ -41,7 +53,7 @@ export async function fetchDestinos() {
 
         const destinosData = await response.json();
 
-        return destinosData.map(createDest); // Devuelve un array de elementos HTML
+        return destinosData.map(createDest); // Devuelve un array de elementos HTML con el botón de eliminar
     } catch (error) {
         console.error("Error al obtener destinos:", error);
         alert("Ocurrió un error al obtener los destinos.");

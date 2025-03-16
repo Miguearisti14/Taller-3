@@ -31,6 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
             destinos.forEach(destino => container.appendChild(destino));
         });
         filtrarDestinos();
+
     }
 
 
