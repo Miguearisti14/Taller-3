@@ -105,10 +105,21 @@ export function setupSignin() {
 export async function updateSessionUI() {
     const { data: { user } } = await supabase.auth.getUser();
     const loginBtnLi = document.querySelector(".inicio_sesion");
+    const destBtnLi = document.querySelector(".destinos");
+
+    if (destBtnLi) {
+        if (user) {
+            destBtnLi.innerHTML = `<a href="destinos.html" data-i18n="destinations">Destinos</a>`;
+
+        } else {
+            destBtnLi.innerHTML = `<a href="#Destinos" data-i18n="destinations">Destinos</a>`;
+        }
+
+    }
 
     if (loginBtnLi) {
         if (user) {
-            loginBtnLi.innerHTML = `<a href="#" id="logoutBtn" data-i18n="CerrarSesion">Cerrar sesión</a>`;
+            loginBtnLi.innerHTML = `<a href="index.html" id="logoutBtn" data-i18n="CerrarSesion">Cerrar sesión</a>`;
             document.getElementById("logoutBtn").addEventListener("click", async (e) => {
                 e.preventDefault();
                 await supabase.auth.signOut();

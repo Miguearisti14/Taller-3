@@ -38,7 +38,10 @@ const translations = {
         Contraseña: "Contraseña",
         CampoContraseña: "Ingrese su contraseña",
         CampoUsuario: "Ingrese su usuario",
-        IniciarSesion: "Iniciar Sesión"
+        IniciarSesion: "Iniciar Sesión",
+        Touristics: "Destinos Turísticos",
+        Search: "Buscar destino...",
+        country: "País"
     },
     en: {
         home: "Home",
@@ -76,7 +79,10 @@ const translations = {
         Contraseña: "Password",
         CampoContraseña: "Enter your password",
         CampoUsuario: "Enter your username",
-        IniciarSesion: "Log in"
+        IniciarSesion: "Log in",
+        Touristics: "Tourist Destinations",
+        Search: "Search destination...",
+        country: "Country"
     }
 };
 

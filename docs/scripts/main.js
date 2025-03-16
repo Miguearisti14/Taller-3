@@ -4,6 +4,8 @@ import { setupForm } from "./form.js";
 import { updateLanguage, getUserLang, setUserLang } from "./i18n.js";
 import { initializeDarkMode } from './darkmode.js';
 import { setupLogin, updateSessionUI, setupSignin } from "./auth.js";
+import { fetchDestinos } from "./destinos.js";
+import { filtrarDestinos } from "./filtrado.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -22,6 +24,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if (document.querySelector('#registerForm')) {
         setupSignin();
     }
+
+    if (document.querySelector('.container-destinos')) {
+        fetchDestinos().then(destinos => {
+            const container = document.getElementById("destinos-container");
+            destinos.forEach(destino => container.appendChild(destino));
+        });
+        filtrarDestinos();
+    }
+
 
     updateSessionUI();  // Actualiza botones de login/logout
 

@@ -562,3 +562,81 @@ button:hover {
     margin-top: 15%;
     margin-bottom: 5%;
 }
+
+// DESTINOS
+.container-destinos {
+    font-family: "Ubuntu", serif;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #121212;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    color: #e0e0e0;
+
+    h2 {
+        font-family: "Ubuntu", serif;
+        display: flex;
+        justify-content: center;
+        padding: 0;
+        align-items: center;
+        margin-top: 90px;
+    }
+}
+
+.grid-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.list-group-item {
+    width: 250px;
+    border-radius: 15px;
+    background: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease-in-out;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #e0e0e0;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    h5 {
+        font-size: 1.4em;
+        font-weight: bold;
+        color: #e0e0e0;
+        margin: 10px 0;
+    }
+
+    p {
+        font-size: 1em;
+        color: #b0b0b0;
+        margin-bottom: 5px;
+    }
+}
+
+// BARRA DE BÚSQUEDA
+.search-bar {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 20px auto;
+    display: block;
+    border: 2px solid #b0b0b0;
+    border-radius: 8px;
+    font-size: 1em;
+    background: #121212;
+    color: #e0e0e0;
+    transition: border-color 0.3s ease;
+
+    &:focus {
+        border-color: #e0e0e0;
+        outline: none;
+    }
+}

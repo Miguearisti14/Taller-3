@@ -21,7 +21,7 @@
     <!-- Header con la barra de navegación -->
     <header>
         <div class="logo">
-            <h1><span>GoTrvel</span></h1>
+            <h1><span>GoTravel</span></h1>
             <img src="assets/images/logo1.png" alt="Ubicación">
         </div>
 
@@ -43,7 +43,12 @@
 
     </header>
 
-    <div id="list-destinos"></div>
+    <div class="container-destinos">
+        <h2 class="destinosT" data-i18n="Touristics">Destinos Turísticos</h2>
+        <input type="text" id="searchInput" placeholder="Buscar destino..." class="search-bar"
+            data-i18n-placeholder="Search">
+        <div id="destinos-container" class="grid-container"></div>
+    </div>
 
 
     <!-- Footer -->
