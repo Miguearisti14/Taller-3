@@ -3,7 +3,7 @@ import { setupNavbar } from "./navbar.js";
 import { setupForm } from "./form.js";
 import { updateLanguage, getUserLang, setUserLang } from "./i18n.js";
 import { initializeDarkMode } from './darkmode.js';
-import { setupAuth, updateSessionUI } from "./auth.js";
+import { setupLogin, updateSessionUI, setupSignin } from "./auth.js";
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -16,7 +16,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (document.querySelector('#formulario_login')) {
-        setupAuth();
+        setupLogin();
+    }
+
+    if (document.querySelector('#registerForm')) {
+        setupSignin();
     }
 
     updateSessionUI();  // Actualiza botones de login/logout

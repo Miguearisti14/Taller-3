@@ -1,33 +1,61 @@
 
 import { supabase } from "./supabase";
 
-export function setupAuth() {
-    const loginForm = document.getElementById("formulario_login")
+export function setupLogin() {
+    const loginForm = document.getElementById("formulario_login");
 
-    loginForm.addEventListener("submit", async (e) => {
-        e.preventDefault()
+    // INICIO DE SESIÓN
+    if (loginForm) {
+        loginForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
 
-        const formData = new FormData(e.target)
-        const email = document.getElementById("loginUsername").value;
-        const password = document.getElementById("loginPassword").value;
+            const email = document.getElementById("loginUsername").value;
+            const password = document.getElementById("loginPassword").value;
 
-        const payload = {
-            email,
-            password
-        }
-        const { data, error } = await supabase.auth.signInWithPassword(payload)
+            const { data, error } = await supabase.auth.signInWithPassword({
+                email,
+                password
+            });
 
-        console.log(data)
+            if (error) {
+                alert("Credenciales incorrectas");
+                return;
+            }
 
-        if (error) {
-            alert("Credenciales incorrectas")
-            return
-        }
+            alert("Inicio de sesión exitoso");
+            localStorage.setItem("token", data.session.access_token);
+            location.href = "index.html"; // Redirigir a la página principal
+        });
+    }
 
-        localStorage.setItem("token", data.session.access_token)
+}
 
-        location.href = "/"
-    });
+export function setupSignin() {
+
+    const registerForm = document.getElementById("registerForm");
+
+    // REGISTRO DE USUARIO
+    if (registerForm) {
+        registerForm.addEventListener("submit", async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById("registerUsername").value;
+            const password = document.getElementById("registerPassword").value;
+
+            const { data, error } = await supabase.auth.signUp({
+                email,
+                password
+            });
+
+            if (error) {
+                alert("Error en el registro: " + error.message);
+                return;
+            }
+
+            alert("Registro exitoso.");
+            window.location.href = "login.html";
+        });
+    }
 }
 
 /* export function setupAuth() {
