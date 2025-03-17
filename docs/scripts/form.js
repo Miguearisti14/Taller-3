@@ -13,7 +13,6 @@ export function setupForm() {
         localStorage.setItem("asunto", asuntField);
         localStorage.setItem("mensaje", messageField);
 
-        // Vaciar los campos después de enviar los datos
         form.reset();
     };
 

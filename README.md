@@ -9,14 +9,6 @@ Este proyecto es una página web que incluye un slider de imágenes, una galerí
 
 ```bash
 npm install
-npm init -y
-npm install esbuild --save-dev
-npm install -g sass
-npm install --sabe-dev esbuild-sass-plugin
-npm install javascript-obfuscator --save-dev
-npm install imagemin imagemin-mozjpeg imagemin-pngquant imagemin-gifsicle imagemin-svgo
-npm install esbuild esbuild-plugin-copy html-minifier-terser --save-dev
-npm.cmd install http-server -D
 
 ```
 ### 2. Configurar JSON
@@ -47,5 +39,6 @@ npm run start
 - [CSS - Dark Mode](https://css-tricks.com/a-complete-guide-to-dark-mode-on-the-web/)
 - [Polyglot.js](https://airbnb.io/polyglot.js/)
 - [Sass](https://sass-lang.com/install/)
+- [Supabase](https://github.com/supabase/supabase-js)
 
 ---

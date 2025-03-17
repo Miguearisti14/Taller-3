@@ -41,7 +41,13 @@ const translations = {
         IniciarSesion: "Iniciar Sesión",
         Touristics: "Destinos Turísticos",
         Search: "Buscar destino...",
-        country: "País"
+        country: "País",
+        language: "Idioma",
+        Destination: "Destino",
+        currency: "Moneda",
+        Add: "Agregar",
+        Cancel: "Cancelar",
+        AddDest: "Agregar Nuevo Destino"
     },
     en: {
         home: "Home",
@@ -82,7 +88,14 @@ const translations = {
         IniciarSesion: "Log in",
         Touristics: "Tourist Destinations",
         Search: "Search destination...",
-        country: "Country"
+        country: "Country",
+        language: "language",
+        Destination: "Destination",
+        currency: "currency",
+        Add: "Add",
+        Cancel: "Cancel",
+        AddDest: "Add New Destination",
+
     }
 };
 

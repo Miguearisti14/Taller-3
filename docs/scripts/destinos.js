@@ -53,7 +53,7 @@ export async function fetchDestinos() {
 
         const destinosData = await response.json();
 
-        return destinosData.map(createDest); // Devuelve un array de elementos HTML con el botón de eliminar
+        return destinosData.map(createDest);
     } catch (error) {
         console.error("Error al obtener destinos:", error);
         alert("Ocurrió un error al obtener los destinos.");

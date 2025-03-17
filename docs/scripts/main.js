@@ -6,6 +6,7 @@ import { initializeDarkMode } from './darkmode.js';
 import { setupLogin, updateSessionUI, setupSignin } from "./auth.js";
 import { fetchDestinos } from "./destinos.js";
 import { filtrarDestinos } from "./filtrado.js";
+import { setupAddDestinoForm } from "./agregar.js"
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -32,6 +33,10 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         filtrarDestinos();
 
+    }
+
+    if (document.querySelector("#destino-form")) {
+        setupAddDestinoForm();
     }
 
 
